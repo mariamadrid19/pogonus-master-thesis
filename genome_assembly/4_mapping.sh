@@ -24,7 +24,7 @@
 SRA='GC143248_ACTCTCGA-TGGTACAG_S65_L001'
 LABEL='Pogonus_chalceus'
 IN_DIR='/scratch/leuven/357/vsc35707/pogonus/yahs/'
-REF='/scratch/leuven/357/vsc35707/pogonus/yahs/Pogonus_hifiasm.asm.hic.p_ctg.gfa'
+REF='/scratch/leuven/357/vsc35707/pogonus/yahs/Pogonus_hifiasm.asm.hic.p_ctg.fa'
 FAIDX='$REF.fai'
 PREFIX='bwa_Pogonus'
 RAW_DIR='/scratch/leuven/357/vsc35707/pogonus/mapping/bams'
