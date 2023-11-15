@@ -15,3 +15,5 @@ module load BWA/0.7.17-GCC-10.3.0
 samtools faidx /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa && cut -f1,2 /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa.fai > Pogonus_hifiasm.asm.hic.p_ctg.fa.genome && bwa index Pogonus_hifiasm.asm.hic.p_ctg.fa
 
 yahs Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/mapping/paired_bams/Pogonus_chalceus.bam -o results/POG
+
+#the yahs.out_scaffolds_final.fa file produced here is re-named Pog_2.0.fasta
