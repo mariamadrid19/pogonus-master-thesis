@@ -1,0 +1,12 @@
+#! /bin/bash -l
+#SBATCH --cluster=genius
+#SBATCH --job-name PretextMap
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=12:00:00
+#SBATCH -o pretext.%j.out
+#SBATCH -A lp_svbelleghem
+
+conda activate thesis
+
+samtools view -h /scratch/leuven/357/vsc35707/pogonus/mapping_HiC/final_mapping_file.bam | PretextMap -o Pogonus_mapped.pretext --sortby length --mapq 10 --highRes

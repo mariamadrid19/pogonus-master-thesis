@@ -1,5 +1,0 @@
-
-
-conda activate thesis
-
-samtools view -h mapping/paired_mapped_reads.bam | PretextMap -o Pogonus_mapped.pretext --sortby length --mapq 10 --highRes
