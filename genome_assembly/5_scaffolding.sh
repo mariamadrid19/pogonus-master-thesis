@@ -1,10 +1,10 @@
 #!/bin/bash -l
 #SBATCH --cluster=genius
-#SBATCH --job-name yahs
+#SBATCH --job-name scaffolding
 #SBATCH --nodes=3
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=36:00:00
-#SBATCH -o yahs.%j.out
+#SBATCH -o scaffolding.%j.out
 #SBATCH -A lp_svbelleghem
 
 cd /scratch/leuven/357/vsc35707/pogonus/yahs
