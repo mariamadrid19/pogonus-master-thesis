@@ -1,10 +1,10 @@
 #!/bin/bash -l
 #SBATCH --cluster=genius
-#SBATCH --job-name rnabloom
+#SBATCH --job-name BUSCO
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --time=48:00:00
-#SBATCH -o rnabloom.%j.out
+#SBATCH --time=72:00:00
+#SBATCH -o busco.%j.out
 #SBATCH -A lp_svbelleghem
 
 conda activate thesis #this is where MetaEuk is installed)
