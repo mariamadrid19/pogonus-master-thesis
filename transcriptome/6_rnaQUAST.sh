@@ -13,11 +13,11 @@ conda activate thesis
 
 #https://cyverse.atlassian.net/wiki/spaces/TUT/pages/258736197/rnaQUAST+1.2.0+denovo+based+using+DE
 
-rnaQUAST.py --transcripts /PATH/TO/transcripts1.fasta /PATH/TO/ANOTHER/transcripts2.fasta \
+rnaQUAST.py --transcripts /PATH/TO/rnabloom_assembly.fasta /PATH/TO/isoscon_assembly.fasta /PATH/TO/isoseq3_assembly.fasta \
 --busco insecta_lineage \
 --o rnaQUAST_output_BUSCO
 
-rnaQUAST.py --transcripts /PATH/TO/transcripts1.fasta /PATH/TO/ANOTHER/transcripts2.fasta \
+rnaQUAST.py --transcripts /PATH/TO/rnabloom_assembly.fasta /PATH/TO/isoscon_assembly.fasta /PATH/TO/isoseq3_assembly.fasta \
 --gene_mark \
 --o rnaQUAST_output_GM
 
