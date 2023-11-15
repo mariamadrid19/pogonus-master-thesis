@@ -7,6 +7,6 @@
 #SBATCH -o fastqc.%j.out
 #SBATCH -A lp_svbelleghem
 
-module load fastqc
+module load FastQC/0.11.8-Java-1.8.0_162
 
-fastqc read1 read2
+fastqc POG_HiFi_reads.fastq
