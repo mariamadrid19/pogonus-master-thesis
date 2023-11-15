@@ -7,10 +7,17 @@
 #SBATCH -o rnaQUAST.%j.out
 #SBATCH -A lp_svbelleghem
 
-conda activate thesis #this is where rnaQUAST is installed
+#this is where rnaQUAST is installed
+conda activate thesis
 #https://github.com/ablab/rnaquast
+
+#https://cyverse.atlassian.net/wiki/spaces/TUT/pages/258736197/rnaQUAST+1.2.0+denovo+based+using+DE
 
 rnaQUAST.py --transcripts /PATH/TO/transcripts1.fasta /PATH/TO/ANOTHER/transcripts2.fasta \
 --busco insecta_lineage \
+--o rnaQUAST_output_BUSCO
+
+rnaQUAST.py --transcripts /PATH/TO/transcripts1.fasta /PATH/TO/ANOTHER/transcripts2.fasta \
 --gene_mark \
---o rnaQUAST_output
+--o rnaQUAST_output_GM
+
