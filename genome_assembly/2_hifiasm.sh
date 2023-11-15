@@ -10,6 +10,7 @@
 cd /scratch/leuven/357/vsc35707/pogonus/hifiasm
 
 #assembly
+#homozygous coverage obtained from second peak of the k-mer plot (twice the heterozygous peak). 
 hifiasm -o Pogonus_hifiasm.asm --n-hap 2 --hom-cov 50 -t 32 --h1 GC143248_ACTCTCGA-TGGTACAG_S65_L001_R1_001.fastq.gz --h2 GC143248_ACTCTCGA-TGGTACAG_S65_L001_R2_001.fastq.gz HiFi-reads.fq.gz
 
 #gfa_to_fasta
