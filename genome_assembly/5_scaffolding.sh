@@ -21,4 +21,7 @@ yahs Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/mappi
 
 cp POG/yahs.out_scaffolds_final.fa /scratch/leuven/357/vsc35707/pogonus/mapping_HiC
 cd /scratch/leuven/357/vsc35707/pogonus/mapping_HiC
-mv yahs.out_scaffolds_final.fa Pog_2.0.fasta
+mv yahs.out_scaffolds_final.fa Pog_2.0.fa
+
+samtools faidx Pog_2.0.fa && cut -f1,2 Pog_2.0.fa.fai > Pog_2.0.fa.genome && bwa index Pog_2.0.fa
+
