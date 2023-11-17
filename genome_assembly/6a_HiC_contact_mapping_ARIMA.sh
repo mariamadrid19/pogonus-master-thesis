@@ -14,12 +14,15 @@
 # ARIMA GENOMICS MAPPING PIPELINE 07/26/2023 #
 ##############################################
 
+# Below find the commands used to map HiC data to the scaffolds (output from yahs)
+# This bash script will map one paired end HiC dataset (read1 & read2 FASTQs) to the output of the scaffolding step (Pog_2.0.fa)
+
 ##########################################
 # Commands #
 ##########################################
 
 SRA='GC143248_ACTCTCGA-TGGTACAG_S65'
-LABEL='Pogonus_chalceus_map_HiC'
+LABEL='Pogonus_chalceus_map_scaffolds'
 IN_DIR='/scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_OMNI_C/Sample_DUDZELE/'
 REF='/scratch/leuven/357/vsc35707/pogonus/yahs/results_POG/Pog_2.0.fa'
 FAIDX='$REF.fai'
