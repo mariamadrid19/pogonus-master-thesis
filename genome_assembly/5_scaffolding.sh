@@ -8,13 +8,12 @@
 #SBATCH -A lp_svbelleghem
 
 cd /scratch/leuven/357/vsc35707/pogonus/yahs
-yahs Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/mapping/deduplicated_files/Pogonus_chalceus_rep1.bam -o results_POG
+#YaHs will take the contig sequences (.fa) and the HiC aligned to the contigs (.bam produced in step 4) and scaffold them 
+yahs Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/mapping/deduplicated_files/Pogonus_chalceus_rep1.bam -o Pog_2.0
 
-#the yahs.out_scaffolds_final.fa file produced here (in the POG directory) is then re-named Pog_2.0.fasta and used to run the ARIMA pipeline again
-#this time, the mapping will be using the Pog_2.0.fasta as the reference (instead of the hifiasm assembly)
+#Pog_2.0.fa is used to run the ARIMA pipeline again, the mapping will be using the scaffolds as the reference (instead of the contigs)
 
-cd results_POG/
-mv yahs.out_scaffolds_final.fa Pog_2.0.fa
+mv Pog_2.0_scaffolds_final.fa Pog_2.0.fa
 cp Pog_2.0.fa /scratch/leuven/357/vsc35707/pogonus/mapping_HiC
 
 #finally, the newly re-named assembly is also indexed in order to run the ARIMA pipeline once more, this time mapping to this scaffolding assembly
