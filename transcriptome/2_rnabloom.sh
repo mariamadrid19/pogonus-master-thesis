@@ -1,7 +1,8 @@
 #!/bin/bash -l
 #SBATCH --cluster=genius
 #SBATCH --job-name rnabloom
-#SBATCH --cpus-per-task=32
+#SBATCH --nodes=3
+#SBATCH --ntasks-per-node=32
 #SBATCH --time=72:00:00
 #SBATCH -o rnabloom.%j.out
 #SBATCH -A lp_svbelleghem
