@@ -14,7 +14,7 @@
 # ARIMA GENOMICS MAPPING PIPELINE 07/26/2023 #
 ##############################################
 
-# Below find the commands used to map HiC data.
+# Below find the commands used to map HiC data to the contigs (output from hifiasm)
 # This bash script will map one paired end HiC dataset (read1 & read2 FASTQs). Feel to modify and multiplex as you see fit to work with your volume of samples and system.
 
 ##########################################
