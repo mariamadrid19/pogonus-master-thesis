@@ -12,4 +12,4 @@ conda activate thesis
 cd /scratch/leuven/357/vsc35707/pogonus/mapping_HiC/
 
 # this uses the final bam file produced by the second mapping (to the scaffolded assembly) to produce a PRETEXT map that will be visualized in PretextView
-samtools view -h Pogonus_chalceus_map_HiC_rep1.bam | PretextMap -o Pogonus_mapped.pretext --sortby length --mapq 10 --highRes
+samtools view -h Pogonus_chalceus_map_HiC_r.bam | PretextMap -o Pogonus_mapped.pretext --sortby length --mapq 10 --highRes
