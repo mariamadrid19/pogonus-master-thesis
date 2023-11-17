@@ -1,10 +1,10 @@
 #! /bin/bash -l
 #SBATCH --cluster=genius
-#SBATCH --job-name mapping_pipeline_assembly_hic
+#SBATCH --job-name map_scaffolds
 #SBATCH --nodes=3
 #SBATCH --ntasks-per-node=12
 #SBATCH --time=36:00:00
-#SBATCH -o mapping_HiC.%j.out
+#SBATCH -o map_scaffolds.%j.out
 #SBATCH -A lp_svbelleghem
 
 # This pipeline is modified from ArimaGenomics (arima_mapping_pipeline.sh)
@@ -27,16 +27,16 @@ IN_DIR='/scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_OMNI_C/Sample_DUDZELE
 REF='/scratch/leuven/357/vsc35707/pogonus/yahs/results_POG/Pog_2.0.fa'
 FAIDX='$REF.fai'
 PREFIX='bwa_Pogonus'
-RAW_DIR='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/bams'
-FILT_DIR='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/filtered_bams'
-FILTER='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/filter_five_end.pl'
-COMBINER='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/two_read_bam_combiner.pl'
-STATS='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/get_stats.pl'
-TMP_DIR='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/temporary_files'
-PAIR_DIR='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/paired_bams'
-REP_DIR='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/deduplicated_files'
+RAW_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/bams'
+FILT_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/filtered_bams'
+FILTER='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/filter_five_end.pl'
+COMBINER='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/two_read_bam_combiner.pl'
+STATS='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/get_stats.pl'
+TMP_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/temporary_files'
+PAIR_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/paired_bams'
+REP_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/deduplicated_files'
 REP_LABEL=${LABEL}_rep1
-MERGE_DIR='/scratch/leuven/357/vsc35707/pogonus/mapping_HiC/final_merged_alignments'
+MERGE_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/final_merged_alignments'
 MAPQ_FILTER=10
 CPU=12
 
