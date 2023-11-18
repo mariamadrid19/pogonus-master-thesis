@@ -10,4 +10,4 @@
 conda activate thesis
 cd /scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_PACBIO_RNA/rRNA
 
-sortmerna --ref silva_rfam_databases/rfam-5.8s-database-id98.fasta --reads POG_IsoSeq_HiFi_demux.fasta
+sortmerna --ref silva_rfam_databases/rfam-5.8s-database-id98.fasta --ref silva_rfam_databases/rfam-5s-database-id98.fasta --ref silva_rfam_databases/silva-euk-18s-id95.fasta --ref silva_rfam_databases/silva-euk-28s-id98.fasta --reads POG_IsoSeq_HiFi_demux.fasta
