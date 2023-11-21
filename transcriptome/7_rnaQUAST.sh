@@ -13,11 +13,14 @@ conda activate thesis
 
 #https://cyverse.atlassian.net/wiki/spaces/TUT/pages/258736197/rnaQUAST+1.2.0+denovo+based+using+DE
 
-rnaQUAST.py --transcripts /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/BUSCO/POG_larveIsoSeq.unpolished.hq.fasta \
+cd /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/rnaQUAST
+ln /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/BUSCO/POG_larveIsoSeq.unpolished.hq.fasta
+
+rnaQUAST.py --transcripts POG_larveIsoSeq.unpolished.hq.fasta \
 --busco insecta_lineage \
 --o rnaQUAST_output_BUSCO 
 
-rnaQUAST.py --transcripts /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/BUSCO/POG_larveIsoSeq.unpolished.hq.fasta \
+rnaQUAST.py --transcripts POG_larveIsoSeq.unpolished.hq.fasta \
 --gene_mark \
 --o rnaQUAST_output_GM
 
