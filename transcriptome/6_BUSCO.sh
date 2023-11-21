@@ -13,4 +13,6 @@ module load HMMER/3.2.1-foss-2018a
 
 sed -i 's/\//|/g' POG_larveIsoSeq.unpolished.hq.fasta
 
-busco -i POG_larveIsoSeq.unpolished.hq.fasta -l insecta_odb10 -o BUSCO_output  -m transcriptome
+cd /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/BUSCO/
+
+busco -i POG_larveIsoSeq.unpolished.hq.fasta -l insecta_odb10 -o output  -m transcriptome
