@@ -15,4 +15,5 @@ sed -i 's/\//|/g' POG_larveIsoSeq.unpolished.hq.fasta
 
 cd /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/BUSCO/
 
+#only works with de-compressed, clean fasta files (headers must be free of "/")
 busco -i POG_larveIsoSeq.unpolished.hq.fasta -l insecta_odb10 -o output  -m transcriptome
