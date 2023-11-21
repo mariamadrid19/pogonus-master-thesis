@@ -11,6 +11,6 @@ conda activate thesis #this is where MetaEuk is installed)
 module load BUSCO/3.0.2-foss-2018a-Python-2.7.14
 module load HMMER/3.2.1-foss-2018a
 
-busco --download-mode fast_lineage -l insecta -o insecta_lineage
+sed -i 's/\//|/g' POG_larveIsoSeq.unpolished.hq.fasta
 
-busco -i assembled-transcriptome.fasta -l insecta -o busco_output  -m transcriptome
+busco -i POG_larveIsoSeq.unpolished.hq.fasta -l insecta_odb10 -o BUSCO_output  -m transcriptome
