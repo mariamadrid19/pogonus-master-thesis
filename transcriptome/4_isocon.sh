@@ -7,7 +7,7 @@
 #SBATCH -o isocon.%j.out
 #SBATCH -A lp_svbelleghem
 
-conda activate thesis
+conda activate IsoCon
 
 IsoCon pipeline -fl_reads /scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_PACBIO_RNA/POG_IsoSeq_HiFi_demux.fastq -outfolder /scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_PACBIO_RNA/isocon_assembly
 ~                                             
