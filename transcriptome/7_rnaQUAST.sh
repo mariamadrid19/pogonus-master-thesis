@@ -7,6 +7,8 @@
 #SBATCH -o rnaQUAST.%j.out
 #SBATCH -A lp_svbelleghem
 
+source /data/leuven/357/vsc35707/miniconda3/etc/profile.d/conda.sh
+
 #this is where rnaQUAST is installed
 conda activate thesis
 #https://github.com/ablab/rnaquast
@@ -14,10 +16,9 @@ conda activate thesis
 #https://cyverse.atlassian.net/wiki/spaces/TUT/pages/258736197/rnaQUAST+1.2.0+denovo+based+using+DE
 
 cd /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/rnaQUAST
-ln /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/BUSCO/POG_larveIsoSeq.unpolished.hq.fasta
 
 rnaQUAST.py --transcripts POG_larveIsoSeq.unpolished.hq.fasta \
---busco insecta_lineage \
+--busco insecta_odb10 \
 --o rnaQUAST_output_BUSCO 
 
 rnaQUAST.py --transcripts POG_larveIsoSeq.unpolished.hq.fasta \
