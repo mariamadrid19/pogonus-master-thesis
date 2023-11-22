@@ -17,6 +17,11 @@ conda activate thesis
 
 cd /scratch/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/rnaQUAST
 
+export PATH=/scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_PACBIO_RNA/TRANSCRIPTOME_ASSEMBLY/rnaQUAST:$PATH
+#add the gmst.pl to my PATH
+
+source ~/.bashrc
+
 rnaQUAST.py --transcripts POG_larveIsoSeq.unpolished.hq.fasta \
 --busco insecta_odb10 \
 --o rnaQUAST_output_BUSCO 
