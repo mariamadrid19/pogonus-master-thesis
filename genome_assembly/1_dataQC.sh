@@ -9,4 +9,4 @@
 
 module load FastQC/0.11.8-Java-1.8.0_162
 
-fastqc POG_HiFi_reads.fastq
+fastqc POG_HiFi_reads.fastq.gz
