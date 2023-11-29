@@ -12,7 +12,7 @@ seqtk seq -a /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fastq.gz
 
 module load Jellyfish/2.2.10-intel-2018a
 
-jellyfish count -m 21 -s 100M -t 20 -C POG_HiFi_reads.fastq.gz
+jellyfish count -m 21 -s 100M -t 20 -C POG_HiFi_reads.fasta
 
 jellyfish histo mer_counts.jf
 
