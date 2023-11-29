@@ -1,4 +1,4 @@
-!/bin/bash -l
+#!/bin/bash -l
 #SBATCH --cluster=genius
 #SBATCH --job-name fastqc
 #SBATCH --nodes=1
