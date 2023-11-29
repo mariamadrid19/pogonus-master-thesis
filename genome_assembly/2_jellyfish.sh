@@ -8,7 +8,7 @@
 #SBATCH -A lp_svbelleghem
 
 cd seqtk/
-seqtk seq -a /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fastq.gz > POG_HiFi_reads.fasta
+seqtk seq -a /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fastq.gz > /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fasta
 
 module load Jellyfish/2.2.10-intel-2018a
 
