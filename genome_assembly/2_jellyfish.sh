@@ -10,7 +10,7 @@
 
 module load Jellyfish/2.2.10-intel-2018a
 
-jellyfish count -m 21 -s 100M -t 20 -C hifi_reads.fasta
+jellyfish count -m 21 -s 100M -t 20 -C POG_HiFi_reads.fastq.gz
 
 jellyfish histo mer_counts.jf
 
