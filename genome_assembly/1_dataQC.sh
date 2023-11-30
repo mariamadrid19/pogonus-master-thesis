@@ -18,6 +18,9 @@ pbindex POG_HiFi_reads.bam
 #this will generate a fastq.gz file from the hifi_reads.bam file
 bam2fastq -o POG_HiFi_reads POG_HiFi_reads.bam
 
+#reads.bam is 200Gb
+#HiFi_reads.bam is 100Gb
+
 module load FastQC/0.11.8-Java-1.8.0_162
 
 #this will run fastqc on the newly extracted HiFi reads
