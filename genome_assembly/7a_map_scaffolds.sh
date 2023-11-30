@@ -23,8 +23,8 @@
 
 SRA='GC143248_ACTCTCGA-TGGTACAG_S65'
 LABEL='Pogonus_chalceus_map_scaffolds'
-IN_DIR='/scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_OMNI_C/Sample_DUDZELE/'
-REF='/scratch/leuven/357/vsc35707/pogonus/yahs/results_POG/Pog_2.0.fa'
+IN_DIR='/scratch/leuven/357/vsc35707/pogonus/hifiasm/'
+REF='/scratch/leuven/357/vsc35707/pogonus/yahs/Pog_2.0.fa'
 FAIDX='$REF.fai'
 PREFIX='Pog_2.0'
 RAW_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/bams'
