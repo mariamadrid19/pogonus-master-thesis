@@ -23,7 +23,7 @@
 
 SRA='GC143248_ACTCTCGA-TGGTACAG_S65'
 LABEL='Pogonus_chalceus'
-IN_DIR='/scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_OMNI_C/Sample_DUDZELE/'
+IN_DIR='/scratch/leuven/357/vsc35707/pogonus/hifiasm/'
 REF='/scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa'
 FAIDX='$REF.fai'
 PREFIX='Pogonus_hifiasm.asm.hic.p_ctg'
