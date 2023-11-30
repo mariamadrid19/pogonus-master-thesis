@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH --cluster=genius
 #SBATCH --job-name jellyfish
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=12:00:00
 #SBATCH -o jellyfish.%j.out
