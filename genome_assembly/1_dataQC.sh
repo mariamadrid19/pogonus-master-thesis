@@ -3,13 +3,15 @@
 #SBATCH --job-name fastqc
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
-#SBATCH --time=12:00:00
+#SBATCH --time=24:00:00
 #SBATCH -o fastqc.%j.out
 #SBATCH -A lp_svbelleghem
 
 conda activate thesis
 
-bam2fastq -o POG_HiFi_reads m64279e_231107_135307.reads.bam
+extracthifi m64279e_231107_135307.reads.bam POG_HiFi_reads.bam
+
+bam2fastq -o POG_HiFi_reads POG_HiFi_reads.bam
 
 module load FastQC/0.11.8-Java-1.8.0_162
 
