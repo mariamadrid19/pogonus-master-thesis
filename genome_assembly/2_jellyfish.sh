@@ -7,6 +7,8 @@
 #SBATCH -o jellyfish.%j.out
 #SBATCH -A lp_svbelleghem
 
+conda activate thesis 
+
 #this will go into the seqtk directory to convert the fastq.gz reads into fasta reads
 cd seqtk/
 seqtk seq -a /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fastq.gz > /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fasta
