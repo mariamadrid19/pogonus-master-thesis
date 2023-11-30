@@ -9,7 +9,7 @@
 
 conda activate thesis
 
-#this will generate a HiFi-only BAM from a reads.bam file since the current reads.bam file still has the many copies of each fragment that result from the circular sequencing
+#this will generate a HiFi-only BAM from a reads.bam file since the current reads.bam file still has many copies of each fragment from the circular sequencing
 extracthifi m64279e_231107_135307.reads.bam POG_HiFi_reads.bam
 
 #this generate an index file that enables random access into PacBio BAM files. This index is needed to generate the fastq.gz file
