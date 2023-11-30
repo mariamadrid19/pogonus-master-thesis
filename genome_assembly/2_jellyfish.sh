@@ -13,6 +13,9 @@ conda activate thesis
 cd seqtk/
 seqtk seq -a /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fastq.gz > /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fasta
 
+#fastq.gz file is 20Gb
+#fasta file is 30Gb
+
 module load Jellyfish/2.2.10-intel-2018a
 
 #this will count kmers on the fasta file, takes a long time
