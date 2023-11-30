@@ -3,7 +3,7 @@
 #SBATCH --job-name dataqc
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
-#SBATCH --time=24:00:00
+#SBATCH --time=10:00:00
 #SBATCH -o qc.%j.out
 #SBATCH -A lp_svbelleghem
 
@@ -22,3 +22,5 @@ module load FastQC/0.11.8-Java-1.8.0_162
 
 #this will run fastqc on the newly extracted HiFi reads
 fastqc POG_HiFi_reads.fastq.gz -t 32
+
+#takes between 3 and 4 hours to run
