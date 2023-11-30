@@ -28,3 +28,5 @@ jellyfish histo -t 32 mer_counts.jf > mer_counts.histo
 #jellyfish dump mer_counts.jf > mer_counts_dumps.fa
 
 jellyfish info mer_counts.jf
+
+#run the histo file in Genomescope
