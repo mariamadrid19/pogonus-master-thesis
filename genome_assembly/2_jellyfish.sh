@@ -7,11 +7,13 @@
 #SBATCH -o jellyfish.%j.out
 #SBATCH -A lp_svbelleghem
 
+#this will go into the seqtk directory to convert the fastq.gz reads into fasta reads
 cd seqtk/
 seqtk seq -a /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fastq.gz > /scratch/leuven/357/vsc35707/pogonus/fastqc/POG_HiFi_reads.fasta
 
 module load Jellyfish/2.2.10-intel-2018a
 
+#this will count kmers on the fasta file 
 jellyfish count -m 21 -s 100M -t 32 -C POG_HiFi_reads.fasta
 
 jellyfish histo mer_counts.jf
