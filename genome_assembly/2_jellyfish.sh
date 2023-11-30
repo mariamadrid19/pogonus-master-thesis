@@ -22,7 +22,7 @@ module load Jellyfish/2.2.10-intel-2018a
 jellyfish count -m 21 -s 100M -t 32 -C POG_HiFi_reads.fasta
 
 #this makes the k-mer histogram (can be seen on the .out file, DO NOT DELETE IT)
-jellyfish histo mer_counts.jf
+jellyfish histo -t 32 mer_counts.jf > mer_counts.histo
 
 #this generates an incredibly big file! be careful with storage
 #jellyfish dump mer_counts.jf > mer_counts_dumps.fa
