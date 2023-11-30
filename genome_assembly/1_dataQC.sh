@@ -20,5 +20,5 @@ bam2fastq -o POG_HiFi_reads POG_HiFi_reads.bam
 
 module load FastQC/0.11.8-Java-1.8.0_162
 
-#this will run fastqc on the fastq.gz HiFi reads
+#this will run fastqc on the newly extracted HiFi reads
 fastqc POG_HiFi_reads.fastq.gz -t 32
