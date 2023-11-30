@@ -1,10 +1,10 @@
 #!/bin/bash -l
 #SBATCH --cluster=genius
-#SBATCH --job-name fastqc
+#SBATCH --job-name dataqc
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=24:00:00
-#SBATCH -o fastqc.%j.out
+#SBATCH -o qc.%j.out
 #SBATCH -A lp_svbelleghem
 
 conda activate thesis
