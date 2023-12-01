@@ -7,4 +7,6 @@
 #SBATCH -o compleasm.%j.out
 #SBATCH -A lp_svbelleghem
 
-python compleasm.py run -a /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -o results/ -l insecta_odb10 -t 32
+conda activate compleasm 
+
+compleasm run -a /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -o results/ -l insecta_odb10 -t 32
