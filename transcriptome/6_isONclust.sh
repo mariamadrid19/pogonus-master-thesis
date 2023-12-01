@@ -10,4 +10,4 @@
 conda activate thesis
 
 #clustering step
-isONclust --isoseq --fastq POG_IsoSeq_HiFi_demux.fastq --outfolder TRANSCRIPTOME_ASSEMBLY/isONclust/
+isONclust --isoseq --fastq POG_IsoSeq_HiFi_demux.fastq --outfolder TRANSCRIPTOME_ASSEMBLY/isONclust/ --t 32
