@@ -56,8 +56,8 @@ echo "### Step 0: Check output directories' existence & create them as needed"
 [ -d $REP_DIR ] || mkdir -p $REP_DIR
 [ -d $MERGE_DIR ] || mkdir -p $MERGE_DIR
 
-#echo "### Step 0: Index reference" # Run only once! Skip this step if you have already generated BWA index files
-#bwa index -a bwtsw -p $PREFIX $REF
+echo "### Step 0: Index reference" # Run only once! Skip this step if you have already generated BWA index files
+bwa index -a bwtsw -p $PREFIX $REF
 
 echo "### Step 1.A: FASTQ to BAM (1st)"
 bwa mem -t $CPU $REF $IN_DIR/${SRA}_R1.fastq | samtools view -@ $CPU -Sb - > $RAW_DIR/${SRA}_1.bam
