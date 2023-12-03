@@ -16,6 +16,8 @@ yahs /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.
 
 mv Pog_2.0_scaffolds_final.fa Pog_2.0.fa
 
+module load SAMtools/1.13-GCC-10.3.0
+
 #finally, the newly re-named assembly is also indexed in order to run the ARIMA pipeline once more, this time mapping to this scaffolding assembly
 samtools faidx Pog_2.0.fa && cut -f1,2 Pog_2.0.fa.fai > Pog_2.0.fa.genome
 
