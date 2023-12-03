@@ -7,6 +7,7 @@
 #SBATCH -o scaffolding.%j.out
 #SBATCH -A lp_svbelleghem
 
+source /data/leuven/357/vsc35707/miniconda3/etc/profile.d/conda.sh
 conda activate thesis 
 
 #YaHs will take the contig sequences (.fa) and the HiC aligned to the contigs (.bam produced in step 4) and scaffold them 
