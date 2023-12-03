@@ -7,6 +7,7 @@
 #SBATCH -o scaffolding.%j.out
 #SBATCH -A lp_svbelleghem
 
+#this is to tell my slurm job where conda is, so that it can activate my environment
 source /data/leuven/357/vsc35707/miniconda3/etc/profile.d/conda.sh
 conda activate thesis 
 
