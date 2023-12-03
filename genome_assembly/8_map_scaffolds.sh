@@ -24,7 +24,7 @@
 SRA='GC143248_ACTCTCGA-TGGTACAG_S65'
 LABEL='Pogonus_chalceus_map_scaffolds'
 IN_DIR='/scratch/leuven/357/vsc35707/pogonus/hifiasm/'
-REF='/scratch/leuven/357/vsc35707/pogonus/yahs/Pog_2.0.fa'
+REF='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/Pog_2.0.fa'
 FAIDX='$REF.fai'
 PREFIX='Pog_2.0'
 RAW_DIR='/scratch/leuven/357/vsc35707/pogonus/map_scaffolds/bams'
@@ -57,8 +57,8 @@ echo "### Step 0: Check output directories' existence & create them as needed"
 [ -d $REP_DIR ] || mkdir -p $REP_DIR
 [ -d $MERGE_DIR ] || mkdir -p $MERGE_DIR
 
-echo "### Step 0: Index reference" # Run only once! Skip this step if you have already generated BWA index files
-bwa index -a bwtsw -p $PREFIX $REF
+#echo "### Step 0: Index reference" # Run only once! Skip this step if you have already generated BWA index files
+#bwa index -a bwtsw -p $PREFIX $REF
 
 echo "### Step 1.A: FASTQ to BAM (1st)"
 bwa mem -t $CPU $REF $IN_DIR/${SRA}_R1.fastq | samtools view -@ $CPU -Sb - > $RAW_DIR/${SRA}_1.bam
