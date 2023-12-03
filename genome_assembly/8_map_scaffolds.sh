@@ -60,10 +60,10 @@ echo "### Step 0: Index reference" # Run only once! Skip this step if you have a
 bwa index -a bwtsw -p $PREFIX $REF
 
 echo "### Step 1.A: FASTQ to BAM (1st)"
-bwa mem -t $CPU $REF $IN_DIR/${SRA}_R1.fastq.gz | samtools view -@ $CPU -Sb - > $RAW_DIR/${SRA}_1.bam
+bwa mem -t $CPU $REF $IN_DIR/${SRA}_R1.fastq | samtools view -@ $CPU -Sb - > $RAW_DIR/${SRA}_1.bam
 
 echo "### Step 1.B: FASTQ to BAM (2nd)"
-bwa mem -t $CPU $REF $IN_DIR/${SRA}_R2.fastq.gz | samtools view -@ $CPU -Sb - > $RAW_DIR/${SRA}_2.bam
+bwa mem -t $CPU $REF $IN_DIR/${SRA}_R2.fastq | samtools view -@ $CPU -Sb - > $RAW_DIR/${SRA}_2.bam
 
 echo "### Step 2.A: Filter 5' end (1st)"
 samtools view -h $RAW_DIR/${SRA}_1.bam | perl $FILTER | samtools view -Sb - > $FILT_DIR/${SRA}_1.bam
