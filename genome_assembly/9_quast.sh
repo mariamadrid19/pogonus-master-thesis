@@ -9,4 +9,4 @@
 
 conda activate thesis
 
-quast /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -t 12 --split-scaffolds /scratch/leuven/357/vsc35707/pogonus/map_scaffoldsyahs.out_scaffolds_final.fa
+quast /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -t 12
