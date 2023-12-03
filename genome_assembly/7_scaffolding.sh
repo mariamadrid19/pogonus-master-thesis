@@ -1,12 +1,13 @@
 #!/bin/bash -l
 #SBATCH --cluster=genius
 #SBATCH --job-name scaffolding
-#SBATCH --nodes=2
+#SBATCH --nodes=3
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=48:00:00
 #SBATCH -o scaffolding.%j.out
 #SBATCH -A lp_svbelleghem
 
+conda activate thesis 
 
 #YaHs will take the contig sequences (.fa) and the HiC aligned to the contigs (.bam produced in step 4) and scaffold them 
 yahs /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/map_contigs/deduplicated_files/Pogonus_chalceus_r.bam -o Pog_2.0
