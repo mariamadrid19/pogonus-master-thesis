@@ -42,6 +42,7 @@ CPU=20
 
 # Important to first activate the conda environment where bwa and samtools are installed
 # /data/leuven/357/vsc35707/miniconda3/envs/thesis/bin/
+source /data/leuven/357/vsc35707/miniconda3/etc/profile.d/conda.sh
 conda activate thesis 
 
 #load picard module
