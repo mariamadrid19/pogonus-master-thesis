@@ -1,15 +1,15 @@
 #!/bin/bash -l
 #SBATCH --cluster=genius
 #SBATCH --job-name scaffolding
-#SBATCH --nodes=3
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=32
-#SBATCH --time=36:00:00
+#SBATCH --time=48:00:00
 #SBATCH -o scaffolding.%j.out
 #SBATCH -A lp_svbelleghem
 
 
 #YaHs will take the contig sequences (.fa) and the HiC aligned to the contigs (.bam produced in step 4) and scaffold them 
-yahs /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/mapping/deduplicated_files/Pogonus_chalceus_r.bam -o Pog_2.0
+yahs /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/map_contigs/deduplicated_files/Pogonus_chalceus_r.bam -o Pog_2.0
 
 #Pog_2.0.fa is used to run the ARIMA pipeline again, the mapping will be using the scaffolds as the reference (instead of the contigs)
 
