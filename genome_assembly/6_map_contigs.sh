@@ -3,7 +3,7 @@
 #SBATCH --job-name map_contigs
 #SBATCH --nodes=3
 #SBATCH --ntasks-per-node=12
-#SBATCH --time=36:00:00
+#SBATCH --time=48:00:00
 #SBATCH -o map_contigs.%j.out
 #SBATCH -A lp_svbelleghem
 
