@@ -23,3 +23,7 @@ module load SAMtools/1.13-GCC-10.3.0
 #finally, the newly re-named assembly is also indexed in order to run the ARIMA pipeline once more, this time mapping to this scaffolding assembly
 samtools faidx yahs.out_scaffolds_final.fa && cut -f1,2 yahs.out_scaffolds_final.fai > yahs.out_scaffolds_final.fa.genome
 
+#Can also scaffold using SALSA2
+bamToBed -i Pogonus_chalceus_r.bam > Pogonus_chalceus_r.bed
+sort -k 4 Pogonus_chalceus_r.bed > tmp && mv tmp Pogonus_chalceus_r.bed
+python run_pipeline.py -a Pogonus_hifiasm.asm.hic.p_ctg.fa -l Pogonus_hifiasm.asm.hic.p_ctg.fa.fai -b Pogonus_chalceus_r.bed -e DNASE -o scaffolds_salsa -m yes -g Pogonus_hifiasm.asm.hic.p_ctg.gfa
