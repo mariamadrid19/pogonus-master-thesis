@@ -14,4 +14,4 @@ cd /scratch/leuven/357/vsc35707/pogonus/hifiasm
 hifiasm -o Pogonus_hifiasm.asm --n-hap 2 --hom-cov 34 -t 32 --h1 GC143248_ACTCTCGA-TGGTACAG_S65_R1.fastq --h2 GC143248_ACTCTCGA-TGGTACAG_S65_R2.fastq POG_HiFi_reads.fastq.gz
 
 #gfa_to_fasta
-awk '/^S/{print ">"$2"\n"$3}' Pogonus_hifiasm.asm.hic.p_ctg.gfa | fold > Pogonus_hifiasm.asm.hic.p_ctg.fa
+awk '/^S/{print ">"$2;print $3}' Pogonus_hifiasm.asm.hic.p_ctg.gfa > Pogonus_hifiasm.asm.hic.p_ctg.fa
