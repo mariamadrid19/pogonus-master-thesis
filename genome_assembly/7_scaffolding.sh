@@ -12,7 +12,9 @@ source /data/leuven/357/vsc35707/miniconda3/etc/profile.d/conda.sh
 conda activate thesis 
 
 #YaHs will take the contig sequences (.fa) and the HiC aligned to the contigs (.bam produced in step 4) and scaffold them 
-yahs /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/map_contigs/deduplicated_files/Pogonus_chalceus_r.bam
+yahs /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa \
+/scratch/leuven/357/vsc35707/pogonus/map_contigs/deduplicated_files/Pogonus_chalceus_r.bam \
+-q 100000 -l 30 -r 50000
 
 #final scaffolds (.fa) are used to run the ARIMA pipeline again, the mapping will be using the scaffolds as the reference (instead of the contigs)
 
