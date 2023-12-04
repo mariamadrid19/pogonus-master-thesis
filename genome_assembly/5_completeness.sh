@@ -10,3 +10,7 @@
 conda activate compleasm 
 
 compleasm run -a /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -o results/ -l insecta_odb10 -t 32
+
+conda activate thesis
+
+quast /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -t 12
