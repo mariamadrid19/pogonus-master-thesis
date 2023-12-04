@@ -7,7 +7,7 @@
 #SBATCH -o map_contigs.%j.out
 #SBATCH -A lp_svbelleghem
 
-conda activate thesis
+conda activate omniC
 
 bwa mem -5SP -T0 -t 16 /scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa /scratch/leuven/357/vsc35707/pogonus/hifiasm/GC143248_ACTCTCGA-TGGTACAG_S65_R1.fastq /scratch/leuven/357/vsc35707/pogonus/hifiasm/GC143248_ACTCTCGA-TGGTACAG_S65_R2.fastq | \
 pairtools parse --min-mapq 40 --walks-policy 5unique \
