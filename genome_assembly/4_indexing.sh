@@ -7,7 +7,7 @@
 #SBATCH -o indexing.%j.out
 #SBATCH -A lp_svbelleghem
 
-cd pogonus/hifiasm
+cd pogonus/hifiasm/
 
 module load SAMtools/1.13-GCC-10.3.0
 module load BWA/0.7.17-GCC-10.3.0
