@@ -16,3 +16,5 @@ minimap2 -d GCA_002278615.1_Pchal_1.0_genomic.mmi GCA_002278615.1_Pchal_1.0_geno
 
 #map the scaffolds to the reference genome
 minimap2 -ax asm5 -t 32 GCA_002278615.1_Pchal_1.0_genomic.fna 50_scaffolds.fa > mapped_scaffolds_ref.paf
+
+#https://jbrowse.org/jb2/docs/quickstart_web/
