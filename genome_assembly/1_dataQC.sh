@@ -7,6 +7,8 @@
 #SBATCH -o qc.%j.out
 #SBATCH -A lp_svbelleghem
 
+cd pogonus/reads/Pogonus_PACBIO_DNA/Dudzele_PacBio_D002_L13
+
 conda activate thesis
 
 #this will generate a HiFi-only BAM from a reads.bam file since the current reads.bam file still has many copies of each fragment from the circular sequencing
