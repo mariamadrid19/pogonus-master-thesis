@@ -7,7 +7,7 @@
 #SBATCH -o qc.%j.out
 #SBATCH -A lp_svbelleghem
 
-cd pogonus/reads/Pogonus_PACBIO_DNA/Dudzele_PacBio_D002_L13
+cd /scratch/leuven/357/vsc35707/pogonus/reads/Pogonus_PACBIO_DNA/Dudzele_PacBio_D002_L13
 
 conda activate thesis
 
