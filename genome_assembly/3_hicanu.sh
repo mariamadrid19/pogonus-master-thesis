@@ -7,6 +7,6 @@
 #SBATCH -o hicanu.%j.out
 #SBATCH -A lp_svbelleghem
 
-export PATH=$PATH:/scratch/leuven/357/vsc35707/pogonus/canu-2.2/build/bin/
+export PATH=$PATH:/scratch/leuven/357/vsc35707/dudzele_pogonus/canu-2.2/build/bin/
 
 canu -p hifi_canu_pogonus -d canu_results/ genomeSize=444m -pacbio-hifi /scratch/leuven/357/vsc35707/pogonus/hifiasm/POG_HiFi_reads.fastq.gz 
