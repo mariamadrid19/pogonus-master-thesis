@@ -13,8 +13,12 @@ conda activate thesis
 cd seqtk/
 seqtk seq -a /scratch/leuven/357/vsc35707/dudzele_pogonus/fastqc/POG_HiFi_reads.fastq.gz > /scratch/leuven/357/vsc35707/dudzele_pogonus/fastqc/POG_HiFi_reads.fasta
 
+mv /scratch/leuven/357/vsc35707/dudzele_pogonus/fastqc/POG_HiFi_reads.fasta /scratch/leuven/357/vsc35707/dudzele_pogonus/jellyfish/
+
 #fastq.gz file is 20Gb
 #fasta file is 30Gb
+
+cd /scratch/leuven/357/vsc35707/dudzele_pogonus/jellyfish/
 
 module load Jellyfish/2.2.10-intel-2018a
 
@@ -25,7 +29,7 @@ jellyfish count -m 21 -s 100M -t 32 -C POG_HiFi_reads.fasta
 jellyfish histo -t 32 mer_counts.jf > mer_counts.histo
 
 #this generates an incredibly big file! be careful with storage
-#jellyfish dump mer_counts.jf > mer_counts_dumps.fa
+jellyfish dump mer_counts.jf > mer_counts_dumps.fa
 
 jellyfish info mer_counts.jf
 
