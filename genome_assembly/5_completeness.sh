@@ -8,6 +8,8 @@
 #SBATCH -A lp_svbelleghem
 
 conda activate compleasm 
+module load BUSCO/3.0.2-foss-2018a-Python-2.7.14
+module load HMMER/3.2.1-foss-2018a
 
 compleasm run -a /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -o results/ -l insecta_odb10 -t 32
 
