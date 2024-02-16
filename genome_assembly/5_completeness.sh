@@ -7,11 +7,15 @@
 #SBATCH -o compleasm_quast.%j.out
 #SBATCH -A lp_svbelleghem
 
-conda activate compleasm 
-module load BUSCO/3.0.2-foss-2018a-Python-2.7.14
-module load HMMER/3.2.1-foss-2018a
+# download compleasm and its dependencies (miniprot and hmmsearch)
+#wget https://github.com/huangnengCSU/compleasm/releases/download/v0.2.5/compleasm-0.2.5_x64-linux.tar.bz2
+#tar -jxvf compleasm-0.2.5_x64-linux.tar.bz2
 
-compleasm run -a /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -o results/ -l insecta_odb10 -t 32
+#conda install pandas
+
+# Run compleasm if lineage is known
+compleasm_kit/compleasm.py download insecta
+compleasm_kit/compleasm.py run -a /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -o results/ -l insecta -t 32
 
 conda activate thesis
 
