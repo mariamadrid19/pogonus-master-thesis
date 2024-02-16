@@ -23,20 +23,20 @@
 
 SRA='GC143248_ACTCTCGA-TGGTACAG_S65'
 LABEL='Pogonus_chalceus'
-IN_DIR='/scratch/leuven/357/vsc35707/pogonus/hifiasm'
-REF='/scratch/leuven/357/vsc35707/pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa'
+IN_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm'
+REF='/scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa'
 FAIDX='$REF.fai'
 PREFIX='Pogonus_hifiasm.asm.hic.p_ctg'
-RAW_DIR='/scratch/leuven/357/vsc35707/pogonus/map_contigs/bams'
-FILT_DIR='/scratch/leuven/357/vsc35707/pogonus/map_contigs/filtered_bams'
-FILTER='/scratch/leuven/357/vsc35707/pogonus/map_contigs/filter_five_end.pl'
-COMBINER='/scratch/leuven/357/vsc35707/pogonus/map_contigs/two_read_bam_combiner.pl'
-STATS='/scratch/leuven/357/vsc35707/pogonus/map_contigs/get_stats.pl'
-TMP_DIR='/scratch/leuven/357/vsc35707/pogonus/map_contigs/temporary_files'
-PAIR_DIR='/scratch/leuven/357/vsc35707/pogonus/map_contigs/paired_bams'
-REP_DIR='/scratch/leuven/357/vsc35707/pogonus/map_contigs/deduplicated_files'
+RAW_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/bams'
+FILT_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/filtered_bams'
+FILTER='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/filter_five_end.pl'
+COMBINER='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/two_read_bam_combiner.pl'
+STATS='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/get_stats.pl'
+TMP_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/temporary_files'
+PAIR_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/paired_bams'
+REP_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/deduplicated_files'
 REP_LABEL=${LABEL}_r
-MERGE_DIR='/scratch/leuven/357/vsc35707/pogonus/map_contigs/final_merged_alignments'
+MERGE_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_contigs/final_merged_alignments'
 MAPQ_FILTER=10
 CPU=12
 
