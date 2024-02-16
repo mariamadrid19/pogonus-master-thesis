@@ -13,7 +13,7 @@
 
 #conda install pandas
 
-# Run compleasm if lineage is known
+# Run compleasm
 compleasm_kit/compleasm.py download insecta
 compleasm_kit/compleasm.py run -a /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/Pogonus_hifiasm.asm.hic.p_ctg.fa -o results/ -l insecta -t 32
 
