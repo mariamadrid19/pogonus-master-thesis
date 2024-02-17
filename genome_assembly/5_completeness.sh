@@ -12,6 +12,8 @@
 #tar -jxvf compleasm-0.2.5_x64-linux.tar.bz2
 
 #conda install pandas
+#conda deactivate
+#run outside of any conda env (won't run)
 
 # Run compleasm
 compleasm_kit/compleasm.py download insecta
