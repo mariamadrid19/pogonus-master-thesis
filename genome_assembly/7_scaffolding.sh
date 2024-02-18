@@ -21,7 +21,7 @@ yahs /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/Pogonus_hifiasm.asm.hi
 module load SAMtools/1.13-GCC-10.3.0
 
 #finally, the newly re-named assembly is also indexed in order to run the ARIMA pipeline once more, this time mapping to this scaffolding assembly
-samtools faidx yahs.out_scaffolds_final.fa && cut -f1,2 yahs.out_scaffolds_final.fai > yahs.out_scaffolds_final.fa.genome
+samtools faidx yahs.out_scaffolds_final.fa && cut -f1,2 yahs.out_scaffolds_final.fa.fai > yahs.out_scaffolds_final.fa.genome
 
 #Can also scaffold using SALSA2
 #bamToBed -i Pogonus_chalceus_r.bam > Pogonus_chalceus_r.bed
