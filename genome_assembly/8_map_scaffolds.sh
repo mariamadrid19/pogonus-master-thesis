@@ -24,7 +24,7 @@
 SRA='GC143248_ACTCTCGA-TGGTACAG_S65'
 LABEL='Pogonus_chalceus_map_scaffolds'
 IN_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/'
-REF='/scratch/leuven/357/vsc35707/dudzele_pogonus/yahs/yahs.out_scaffolds_final.fa'
+REF='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_scaffolds/yahs.out_scaffolds_final.fa'
 FAIDX='$REF.fai'
 PREFIX='yahs.out_scaffolds_final.fa'
 RAW_DIR='/scratch/leuven/357/vsc35707/dudzele_pogonus/map_scaffolds/bams'
