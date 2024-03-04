@@ -9,4 +9,4 @@
 
 conda activate thesis
 
-flye --pacbio-hifi /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/POG_HiFi_reads.fastq --genome-size 1.3g --threads 32
+flye --pacbio-hifi /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/POG_HiFi_reads.fastq --genome-size 1.3g --threads 32 --out-dir results_hiflye
