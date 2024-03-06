@@ -7,10 +7,12 @@
 #SBATCH -o indexing.%j.out
 #SBATCH -A lp_svbelleghem
 
-module load SAMtools/1.13-GCC-10.3.0
-module load BWA/0.7.17-GCC-10.3.0
+cd /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/
 
-bwa mem -5SP no_HiC_hifiasm.asm.bp.p_ctg.fa /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/GC143248_ACTCTCGA-TGGTACAG_S65_R1.fastq /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/GC143248_ACTCTCGA-TGGTACAG_S65_R2.fastq | samtools view -S -h -b -F 2304 > aligned_assembly_hic.bam
+module load SAMtools/1.13-GCC-10.3.0
+conda activate thesis #(bwa is loaded here)
+
+bwa mem -5SP Pogonus_hifiasm.asm.hic.p_ctg.fa GC143248_ACTCTCGA-TGGTACAG_S65_R1.fastq GC143248_ACTCTCGA-TGGTACAG_S65_R2.fastq | samtools view -S -h -b -F 2304 > aligned_assembly_hic.bam
 
 conda activate hic_qc
 
