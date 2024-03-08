@@ -12,8 +12,9 @@ cd /scratch/leuven/357/vsc35707/dudzele_pogonus/hifiasm/
 module load SAMtools/1.13-GCC-10.3.0
 conda activate thesis #(bwa is loaded here)
 
-bwa mem -5SP Pogonus_hifiasm.asm.hic.p_ctg.fa GC143248_ACTCTCGA-TGGTACAG_S65_R1.fastq GC143248_ACTCTCGA-TGGTACAG_S65_R2.fastq | samtools view -S -h -b -F 2304 > aligned_assembly_hic.bam
+#map the hic reads to the hic assembly (hifiasm contigs)
+bwa mem -t 32 -5SP Pogonus_hifiasm.asm.hic.p_ctg.fa GC143248_ACTCTCGA-TGGTACAG_S65_R1.fastq GC143248_ACTCTCGA-TGGTACAG_S65_R2.fastq | samtools view -S -h -b -F 2304 > aligned_assembly_hic.bam
 
+#check the quality of the hic reads
 conda activate hic_qc
-
 python hic_qc -b aligned_assembly_hic.bam -n 1000000 -r 
