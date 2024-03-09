@@ -19,3 +19,8 @@ awk '/^>/ { if (count++ >= 50) exit } { print }' dh1_sorted_scaffolds.fasta > dh
 
 #check how many scaffolds were extracted
 grep -c "^>" dh1_50_scaffolds.fasta
+
+conda activate ragtag
+
+#aligns hap2 scaffolds to the reference (hap1) using minimap2
+ragtag.py correct dh1_50_scaffolds.fasta dh2_50_scaffolds.fasta -t 24
