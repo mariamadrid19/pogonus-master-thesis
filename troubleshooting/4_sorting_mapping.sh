@@ -22,5 +22,9 @@ grep -c "^>" dh1_50_scaffolds.fasta
 
 conda activate ragtag
 
-#aligns hap2 scaffolds to the reference (hap1) using minimap2
-ragtag.py correct dh1_50_scaffolds.fasta dh2_50_scaffolds.fasta -t 24
+#ragtag aligns scaffolds to the reference (hap1) using minimap2
+ragtag.py correct dh1_50_scaffolds.fasta dh2_50_scaffolds.fasta -t 24 -o dh1_dh2_output
+
+ragtag.py correct dh1_50_scaffolds.fasta nh1_50_scaffolds.fasta -t 24 -o dh1_nh1_output
+
+ragtag.py correct dh1_50_scaffolds.fasta nh2_50_scaffolds.fasta -t 24 -o dh1_nh2_output
