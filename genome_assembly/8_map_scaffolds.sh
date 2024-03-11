@@ -15,7 +15,7 @@
 ##############################################
 
 # Below find the commands used to map HiC data to the scaffolds (output from yahs)
-# This bash script will map one paired end HiC dataset (read1 & R) to the output of the scaffolding step (Pog_2.0.fa)
+# This bash script will map one paired end HiC dataset (read1 & R) to the output of the scaffolding step (yahs.out_scaffolds_final.fa)
 
 ##########################################
 # Commands #
