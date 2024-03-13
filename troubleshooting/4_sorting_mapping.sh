@@ -22,9 +22,18 @@ grep -c "^>" dh1_50_scaffolds.fasta
 
 conda activate ragtag
 
-#ragtag aligns scaffolds to the reference (hap1) using minimap2
-ragtag.py correct dh1_50_scaffolds.fasta dh2_50_scaffolds.fasta -t 24 -o dh1_dh2_output
+#ragtag aligns scaffolds to the reference (dudzele hap1) using minimap2
+ragtag.py scaffold dh1_50_scaffolds.fasta dh2_50_scaffolds.fasta -t 24 -o dh1_dh2_output
 
-ragtag.py correct dh1_50_scaffolds.fasta nh1_50_scaffolds.fasta -t 24 -o dh1_nh1_output
+ragtag.py scaffold dh1_50_scaffolds.fasta nh1_50_scaffolds.fasta -t 24 -o dh1_nh1_output
 
-ragtag.py correct dh1_50_scaffolds.fasta nh2_50_scaffolds.fasta -t 24 -o dh1_nh2_output
+ragtag.py scaffold dh1_50_scaffolds.fasta nh2_50_scaffolds.fasta -t 24 -o dh1_nh2_output
+
+conda activate thesis
+
+#minimap2 maps sorted scaffolds to the reference (dudzele hap1) 
+minimap2 -ax asm5 dh1_50_scaffolds.fasta dh1_dh2_output/ragtag.scaffold.fasta -t 24 > aln_dh1_dh2.sam
+
+minimap2 -ax asm5 dh1_50_scaffolds.fasta dh1_nh1_output/ragtag.scaffold.fasta -t 24 > aln_dh1_nh1.sam
+
+minimap2 -ax asm5 dh1_50_scaffolds.fasta dh1_nh2_output/ragtag.scaffold.fasta -t 24 > aln_dh1_nh2.sam
