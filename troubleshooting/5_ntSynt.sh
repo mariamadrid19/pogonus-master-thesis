@@ -7,6 +7,9 @@
 #SBATCH -o ntsynt.%j.out
 #SBATCH -A lp_svbelleghem
 
+conda activate ntsynt
+
+#Multi-genome synteny detection using minimizer graphs
 ntSynt dh1_50_scaffolds.fasta sorted_nh1.fasta -p ragtag_dh1_nh1 -d 20
 
 # Sort the blocks based on the specified order
