@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#taken from https://github.com/bcgsc/ntSynt/tree/main/visualization_scripts
 '''
 Given a set of synteny blocks, compute basic stats including the number of blocks,
 coverage and average/median length
