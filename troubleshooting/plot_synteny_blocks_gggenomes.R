@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+#Modified from https://github.com/bcgsc/ntSynt/tree/main/visualization_scripts
 library(argparse)
 #devtools::install_github("thackl/gggenomes")
 library(gggenomes)
