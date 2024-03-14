@@ -16,7 +16,7 @@ python sort_ntsynt_blocks.py --synteny_blocks ragtag_dh1_nh1.synteny_blocks.tsv 
 python format_blocks_gggenomes.py --fai dh1_50_scaffolds.fasta.fai  sorted_nh1.fasta.fai --prefix ragtag_dh1_nh1 --blocks ragtag_dh1_nh1.synteny_blocks.sorted.tsv --length 100 --colour dh1_50_scaffolds.fasta
 
 cat ragtag_dh1_nh1.links.tsv  | mlr --tsv sort -f strand -n block_id > ragtag_dh1_nh1.links.sorted.tsv && mv ragtag_dh1_nh1.links.sorted.tsv ragtag_dh1_nh1.links.tsv
-cat ragtag_dh1_nh1.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ragtag_dh1_nh1.sequence_lengths.sorted.tsv && mv ragtag_dh1_nh1.sequence_lengths.sorted.tsv ragtag_dh1_nh1..sequence_lengths.tsv
+cat ragtag_dh1_nh1.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ragtag_dh1_nh1.sequence_lengths.sorted.tsv && mv ragtag_dh1_nh1.sequence_lengths.sorted.tsv ragtag_dh1_nh1.sequence_lengths.tsv
 
 #run R script to generate plots
 Rscript plot_synteny_blocks_gggenomes.R -s ragtag_dh1_nh1.sequence_lengths.tsv -l ragtag_dh1_nh1.links.tsv --scale 20000000 --p ragtag_dh1_nh1
