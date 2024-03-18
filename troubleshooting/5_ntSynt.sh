@@ -22,4 +22,4 @@ cat synteny_all_haps.synteny_blocks.links.tsv  | mlr --tsv sort -f strand -n blo
 cat synteny_all_haps.synteny_blocks.sequence_lengths.tsv | mlr --tsv sort -f seq_id > synteny_all_haps.synteny_blocks.sequence_lengths.sorted.tsv && mv synteny_all_haps.synteny_blocks.sequence_lengths.sorted.tsv synteny_all_haps.synteny_blocks.sequence_lengths.tsv
 
 #run R script to generate plots
-Rscript plot_synteny_blocks_gggenomes.R -s ragtag_dh1_nh1.sequence_lengths.tsv -l ragtag_dh1_nh1.links.tsv --scale 20000000 --p ragtag_dh1_nh1
+Rscript plot_synteny_blocks_gggenomes.R -s synteny_all_haps.sequence_lengths.tsv -l synteny_all_haps.links.tsv --scale 20000000 --p synteny_all_haps
