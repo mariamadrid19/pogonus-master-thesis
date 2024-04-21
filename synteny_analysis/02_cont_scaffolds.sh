@@ -114,8 +114,30 @@ cat ext_scaffold_4.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffol
 Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_4.sequence_lengths.tsv -l ext_scaffold_4.links.tsv --scale 25000000 --p ext_scaffold_4
 
 #SCAFFOLD 7
+awk 'NR==2 {print substr($0, 22340581, 46000200-22340581+1)}' LG03_dud.fasta > ext_scaffold_7_prim_dud.fa
+sed -i '1i >scaffold_7_RagTag' ext_scaffold_7_prim_dud.fa
+
+awk 'NR==2 {print substr($0, 120572473, 153501276-120572473+1)}' LG01_nieu.fasta > ext_scaffold_7_prim_nieu.fa
+sed -i '1i >scaffold_7_RagTag' ext_scaffold_7_prim_nieu.fa
+
+ntSynt ext_scaffold_7_prim_dud.fa ext_scaffold_7_prim_nieu.fa -p ext_scaffold_7 -t 24 -d 0.01
+python denovo_synteny_block_stats.py --tsv ext_scaffold_7.synteny_blocks.tsv --fai ext_scaffold_7_prim_dud.fa.fai ext_scaffold_7_prim_nieu.fa.fai
+python sort_ntsynt_blocks.py --synteny_blocks ext_scaffold_7.synteny_blocks.tsv --sort_order ext_scaffold_7_prim_dud.fa.fai ext_scaffold_7_prim_nieu.fa.fai --fais > ext_scaffold_7.synteny_blocks.sorted.tsv
+python format_blocks_gggenomes.py --fai ext_scaffold_7_prim_dud.fa.fai ext_scaffold_7_prim_nieu.fa.fai --prefix ext_scaffold_7 --blocks ext_scaffold_7.synteny_blocks.sorted.tsv --length 100 --colour ext_scaffold_7_prim_dud.fa
+
+cp ext_scaffold_7.links.tsv $VSC_DATA
+cp ext_scaffold_7.sequence_lengths.tsv $VSC_DATA
+
+cat ext_scaffold_7.links.tsv  | mlr --tsv sort -f strand -n block_id > ext_scaffold_7.links.sorted.tsv && mv ext_scaffold_7.links.sorted.tsv ext_scaffold_7.links.tsv
+cat ext_scaffold_7.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffold_7.sequence_lengths.sorted.tsv && mv ext_scaffold_7.sequence_lengths.sorted.tsv ext_scaffold_7.sequence_lengths.tsv
+Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_7.sequence_lengths.tsv -l ext_scaffold_7.links.tsv --scale 25000000 --p ext_scaffold_7
 
 #SCAFFOLD 8
+awk 'NR==2 {print substr($0, 1, 22185742-1+1)}' LG09_dud.fasta > ext_scaffold_8_prim_dud.fa
+sed -i '1i >scaffold_8_RagTag' ext_scaffold_8_prim_dud.fa
+
+awk 'NR==2 {print substr($0, 1, 32539133-1+1)}' LG09_nieu.fasta > ext_scaffold_8_prim_nieu.fa
+sed -i '1i >scaffold_8_RagTag' ext_scaffold_8_prim_nieu.fa
 
 #SCAFFOLD 9
 
