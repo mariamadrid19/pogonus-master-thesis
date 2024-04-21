@@ -41,7 +41,7 @@ awk '/^>LG10_P_chalceus_RagTag$/{flag=1; print; next} flag && /^>/{flag=0} flag 
 awk 'NR==2 {print substr($0, 9100059, 39608137-9100059+1)}' LG01_dud.fasta > ext_scaffold_2_prim_dud.fa
 sed -i '1i >scaffold_2_RagTag' ext_scaffold_2_prim_dud.fa
 
-awk 'NR==2 {print substr($0, 43076330, 84460820-43076330+1)}' LG03_dud.fasta > ext_scaffold_2_prim_nieu.fa
+awk 'NR==2 {print substr($0, 43076330, 84460820-43076330+1)}' LG03_nieu.fasta > ext_scaffold_2_prim_nieu.fa
 sed -i '1i >scaffold_2_RagTag' ext_scaffold_2_prim_nieu.fa
 
 #SCAFFOLD 3
