@@ -154,3 +154,22 @@ Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_8.sequence_lengths.tsv -
 #SCAFFOLD 9
 
 #SCAFFOLD 11
+
+#Mapping for Asynt, map Dudzele and Nieuwpoort individual scaffolds against each other with minimap2 
+conda activate thesis
+
+minimap2 -x asm5 ext_scaffold_1_prim_dud.fa ext_scaffold_1_prim_nieu.fa | gzip > ext_scaffold_1.paf.gz
+
+minimap2 -x asm5 ext_scaffold_2_prim_dud.fa ext_scaffold_2_prim_nieu.fa | gzip > ext_scaffold_2.paf.gz
+
+minimap2 -x asm5 ext_scaffold_3_prim_dud.fa ext_scaffold_3_prim_nieu.fa | gzip > ext_scaffold_3.paf.gz
+
+minimap2 -x asm5 ext_scaffold_4_prim_dud.fa ext_scaffold_4_prim_nieu.fa | gzip > ext_scaffold_4.paf.gz
+
+minimap2 -x asm5 ext_scaffold_7_prim_dud.fa ext_scaffold_7_prim_nieu.fa | gzip > ext_scaffold_7.paf.gz
+
+minimap2 -x asm5 ext_scaffold_8_prim_dud.fa ext_scaffold_8_prim_nieu.fa | gzip > ext_scaffold_8.paf.gz
+
+#minimap2 -x asm5 ext_scaffold_9_prim_dud.fa ext_scaffold_9_prim_nieu.fa | gzip > ext_scaffold_9.paf.gz
+
+#minimap2 -x asm5 ext_scaffold_11_prim_dud.fa ext_scaffold_11_prim_nieu.fa | gzip > ext_scaffold_11.paf.gz
