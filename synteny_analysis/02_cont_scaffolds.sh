@@ -153,7 +153,13 @@ Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_8.sequence_lengths.tsv -
 
 #SCAFFOLD 9
 
-#SCAFFOLD 11
+#SCAFFOLD 11 DUDZELE
+awk 'NR==2 {print substr($0, 24993515, 44107433-24993515+1)}' LG05_dud.fasta > ext_scaffold_11_prim_dud.fa
+sed -i '1i >scaffold_11_RagTag' ext_scaffold_11_prim_dud.fa
+
+#SCAFFOLD 12 NIEUWPOORT
+awk 'NR==2 {print substr($0, 24298258, 52146979-24298258+1)}' LG04_nieu.fasta > ext_scaffold_12_prim_nieu.fa
+sed -i '1i >scaffold_12_RagTag' ext_scaffold_12_prim_nieu.fa
 
 #Mapping for Asynt, map Dudzele and Nieuwpoort individual scaffolds against each other with minimap2 
 conda activate thesis
