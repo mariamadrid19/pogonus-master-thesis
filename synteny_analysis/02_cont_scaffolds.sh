@@ -36,7 +36,7 @@ awk '/^>LG10_P_chalceus_RagTag$/{flag=1; print; next} flag && /^>/{flag=0} flag 
 #The to extract specific scaffolds (given the positions found in the corresponding AGP files). It's necessary to add a new heading since awk only extracts the raw sequence
 
 #SCAFFOLD 1
-awk 'NR==2 {print substr($0, 34117388, 72878678-34117388+1)}' LG01_dud.fasta > ext_scaffold_1_prim_dud.fa
+awk 'NR==2 {print substr($0, 34117388, 72878678-34117388+1)}' LG02_dud.fasta > ext_scaffold_1_prim_dud.fa
 sed -i '1i >scaffold_1_RagTag' ext_scaffold_1_prim_dud.fa
 
 awk 'NR==2 {print substr($0, 1, 58882969-1+1)}' LG06_nieu.fasta > ext_scaffold_1_prim_nieu.fa
