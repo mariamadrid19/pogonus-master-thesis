@@ -42,7 +42,6 @@ sed -i '1i >scaffold_1_RagTag' ext_scaffold_1_prim_dud.fa
 awk 'NR==2 {print substr($0, 1, 58882969-1+1)}' LG06_nieu.fasta > ext_scaffold_1_prim_nieu.fa
 sed -i '1i >scaffold_1_RagTag' ext_scaffold_1_prim_nieu.fa
 
-
 #SCAFFOLD 2
 awk 'NR==2 {print substr($0, 9100059, 39608137-9100059+1)}' LG01_dud.fasta > ext_scaffold_2_prim_dud.fa
 sed -i '1i >scaffold_2_RagTag' ext_scaffold_2_prim_dud.fa
@@ -64,6 +63,10 @@ sed -i '1i >scaffold_4_RagTag' ext_scaffold_4_prim_dud.fa
 awk 'NR==2 {print substr($0, 7103728, 45349787-7103728+1)}' LG02_nieu.fasta > ext_scaffold_4_prim_nieu.fa
 sed -i '1i >scaffold_4_RagTag' ext_scaffold_4_prim_nieu.fa
 
+#SCAFFOLD 5 NIEUWPOORT
+awk 'NR==2 {print substr($0, 45472388, 79512942-45472388+1)}' LG02_nieu.fasta > ext_scaffold_5_prim_nieu.fa
+sed -i '1i >scaffold_5_RagTag' ext_scaffold_5_prim_nieu.fa
+
 #SCAFFOLD 7
 awk 'NR==2 {print substr($0, 22340581, 46000200-22340581+1)}' LG03_dud.fasta > ext_scaffold_7_prim_dud.fa
 sed -i '1i >scaffold_7_RagTag' ext_scaffold_7_prim_dud.fa
@@ -79,7 +82,8 @@ awk 'NR==2 {print substr($0, 1, 32539133-1+1)}' LG09_nieu.fasta > ext_scaffold_8
 sed -i '1i >scaffold_8_RagTag' ext_scaffold_8_prim_nieu.fa
 
 #SCAFFOLD 9 DUDZELE
-
+awk 'NR==2 {print substr($0, 13335419, 33377731-13335419+1)}' LG04_dud.fasta > ext_scaffold_9_prim_dud.fa
+sed -i '1i >scaffold_9_RagTag' ext_scaffold_9_prim_dud.fa
 
 #SCAFFOLD 10 NIEUWPOORT
 
@@ -110,17 +114,66 @@ Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_2_3.sequence_lengths.tsv
 ntSynt ext_scaffold_4_prim_dud.fa ext_scaffold_7_prim_nieu.fa -p ext_scaffold_4_7 -t 24 -d 0.01
 python denovo_synteny_block_stats.py --tsv ext_scaffold_4_7.synteny_blocks.tsv --fai ext_scaffold_4_prim_dud.fa.fai ext_scaffold_7_prim_nieu.fa.fai
 python sort_ntsynt_blocks.py --synteny_blocks ext_scaffold_4_7.synteny_blocks.tsv --sort_order ext_scaffold_4_prim_dud.fa.fai ext_scaffold_7_prim_nieu.fa.fai --fais > ext_scaffold_4_7.synteny_blocks.sorted.tsv
-python format_blocks_gggenomes.py --fai ext_scaffold_4_prim_dud.fa.fai ext_scaffold_7_prim_nieu.fa.fai --prefix ext_scaffold_2_3 --blocks ext_scaffold_4_7.synteny_blocks.sorted.tsv --length 100 --colour ext_scaffold_4_prim_dud.fa
+python format_blocks_gggenomes.py --fai ext_scaffold_4_prim_dud.fa.fai ext_scaffold_7_prim_nieu.fa.fai --prefix ext_scaffold_4_7 --blocks ext_scaffold_4_7.synteny_blocks.sorted.tsv --length 100 --colour ext_scaffold_4_prim_dud.fa
 
-cp ext_scaffold_2_3.links.tsv $VSC_DATA
-cp ext_scaffold_2_3.sequence_lengths.tsv $VSC_DATA
+cp ext_scaffold_4_7.links.tsv $VSC_DATA
+cp ext_scaffold_4_7.sequence_lengths.tsv $VSC_DATA
 
-cat ext_scaffold_2_3.links.tsv  | mlr --tsv sort -f strand -n block_id > ext_scaffold_2_3.links.sorted.tsv && mv ext_scaffold_2_3.links.sorted.tsv ext_scaffold_2_3.links.tsv
-cat ext_scaffold_2_3.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffold_2_3.sequence_lengths.sorted.tsv && mv ext_scaffold_2_3.sequence_lengths.sorted.tsv ext_scaffold_2_3.sequence_lengths.tsv
-Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_2_3.sequence_lengths.tsv -l ext_scaffold_2_3.links.tsv --scale 25000000 --p ext_scaffold_2_3
-
+cat ext_scaffold_4_7.links.tsv  | mlr --tsv sort -f strand -n block_id > ext_scaffold_4_7.links.sorted.tsv && mv ext_scaffold_4_7.links.sorted.tsv ext_scaffold_4_7.links.tsv
+cat ext_scaffold_4_7.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffold_4_7.sequence_lengths.sorted.tsv && mv ext_scaffold_4_7.sequence_lengths.sorted.tsv ext_scaffold_4_7.sequence_lengths.tsv
+Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_4_7.sequence_lengths.tsv -l ext_scaffold_4_7.links.tsv --scale 25000000 --p ext_scaffold_4_7
 
 #3 vs 4
+ntSynt ext_scaffold_3_prim_dud.fa ext_scaffold_4_prim_nieu.fa -p ext_scaffold_3_4 -t 24 -d 0.01
+python denovo_synteny_block_stats.py --tsv ext_scaffold_3_4.synteny_blocks.tsv --fai ext_scaffold_3_prim_dud.fa.fai ext_scaffold_4_prim_nieu.fa.fai
+python sort_ntsynt_blocks.py --synteny_blocks ext_scaffold_3_4.synteny_blocks.tsv --sort_order ext_scaffold_3_prim_dud.fa.fai ext_scaffold_4_prim_nieu.fa.fai --fais > ext_scaffold_3_4.synteny_blocks.sorted.tsv
+python format_blocks_gggenomes.py --fai ext_scaffold_3_prim_dud.fa.fai ext_scaffold_4_prim_nieu.fa.fai --prefix ext_scaffold_3_4 --blocks ext_scaffold_3_4.synteny_blocks.sorted.tsv --length 100 --colour ext_scaffold_3_prim_dud.fa
+
+cp ext_scaffold_3_4.links.tsv $VSC_DATA
+cp ext_scaffold_3_4.sequence_lengths.tsv $VSC_DATA
+
+cat ext_scaffold_3_4.links.tsv  | mlr --tsv sort -f strand -n block_id > ext_scaffold_3_4.links.sorted.tsv && mv ext_scaffold_3_4.links.sorted.tsv ext_scaffold_3_4.links.tsv
+cat ext_scaffold_3_4.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffold_3_4.sequence_lengths.sorted.tsv && mv ext_scaffold_3_4.sequence_lengths.sorted.tsv ext_scaffold_3_4.sequence_lengths.tsv
+Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_3_4.sequence_lengths.tsv -l ext_scaffold_3_4.links.tsv --scale 25000000 --p ext_scaffold_3_4
+
+#1 vs 5
+ntSynt ext_scaffold_1_prim_dud.fa ext_scaffold_5_prim_nieu.fa -p ext_scaffold_1_5 -t 24 -d 0.01
+python denovo_synteny_block_stats.py --tsv ext_scaffold_1_5.synteny_blocks.tsv --fai ext_scaffold_1_prim_dud.fa.fai ext_scaffold_5_prim_nieu.fa.fai
+python sort_ntsynt_blocks.py --synteny_blocks ext_scaffold_1_5.synteny_blocks.tsv --sort_order ext_scaffold_1_prim_dud.fa.fai ext_scaffold_5_prim_nieu.fa.fai --fais > ext_scaffold_1_5.synteny_blocks.sorted.tsv
+python format_blocks_gggenomes.py --fai ext_scaffold_1_prim_dud.fa.fai ext_scaffold_5_prim_nieu.fa.fai --prefix ext_scaffold_1_5 --blocks ext_scaffold_1_5.synteny_blocks.sorted.tsv --length 100 --colour ext_scaffold_1_prim_dud.fa
+
+cp ext_scaffold_1_5.links.tsv $VSC_DATA
+cp ext_scaffold_1_5.sequence_lengths.tsv $VSC_DATA
+
+cat ext_scaffold_1_5.links.tsv  | mlr --tsv sort -f strand -n block_id > ext_scaffold_1_5.links.sorted.tsv && mv ext_scaffold_1_5.links.sorted.tsv ext_scaffold_1_5.links.tsv
+cat ext_scaffold_1_5.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffold_1_5.sequence_lengths.sorted.tsv && mv ext_scaffold_1_5.sequence_lengths.sorted.tsv ext_scaffold_1_5.sequence_lengths.tsv
+Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_1_5.sequence_lengths.tsv -l ext_scaffold_1_5.links.tsv --scale 25000000 --p ext_scaffold_1_5
+
+#7 vs 2
+ntSynt ext_scaffold_7_prim_dud.fa ext_scaffold_2_prim_nieu.fa -p ext_scaffold_7_2 -t 24 -d 0.01
+python denovo_synteny_block_stats.py --tsv ext_scaffold_7_2.synteny_blocks.tsv --fai ext_scaffold_7_prim_dud.fa.fai ext_scaffold_2_prim_nieu.fa.fai
+python sort_ntsynt_blocks.py --synteny_blocks ext_scaffold_7_2.synteny_blocks.tsv --sort_order ext_scaffold_7_prim_dud.fa.fai ext_scaffold_2_prim_nieu.fa.fai --fais > ext_scaffold_7_2.synteny_blocks.sorted.tsv
+python format_blocks_gggenomes.py --fai ext_scaffold_7_prim_dud.fa.fai ext_scaffold_2_prim_nieu.fa.fai --prefix ext_scaffold_7_2 --blocks ext_scaffold_7_2.synteny_blocks.sorted.tsv --length 100 --colour ext_scaffold_7_prim_dud.fa
+
+cp ext_scaffold_7_2.links.tsv $VSC_DATA
+cp ext_scaffold_7_2.sequence_lengths.tsv $VSC_DATA
+
+cat ext_scaffold_7_2.links.tsv  | mlr --tsv sort -f strand -n block_id > ext_scaffold_7_2.links.sorted.tsv && mv ext_scaffold_7_2.links.sorted.tsv ext_scaffold_7_2.links.tsv
+cat ext_scaffold_7_2.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffold_7_2.sequence_lengths.sorted.tsv && mv ext_scaffold_7_2.sequence_lengths.sorted.tsv ext_scaffold_7_2.sequence_lengths.tsv
+Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_7_2.sequence_lengths.tsv -l ext_scaffold_7_2.links.tsv --scale 25000000 --p ext_scaffold_7_2
+
+#9 vs 12
+ntSynt ext_scaffold_9_prim_dud.fa ext_scaffold_12_prim_nieu.fa -p ext_scaffold_9_12 -t 24 -d 0.01
+python denovo_synteny_block_stats.py --tsv ext_scaffold_9_12.synteny_blocks.tsv --fai ext_scaffold_7_prim_dud.fa.fai ext_scaffold_2_prim_nieu.fa.fai
+python sort_ntsynt_blocks.py --synteny_blocks ext_scaffold_9_12.synteny_blocks.tsv --sort_order ext_scaffold_9_prim_dud.fa.fai ext_scaffold_12_prim_nieu.fa.fai --fais > ext_scaffold_9_12.synteny_blocks.sorted.tsv
+python format_blocks_gggenomes.py --fai ext_scaffold_9_prim_dud.fa.fai ext_scaffold_12_prim_nieu.fa.fai --prefix ext_scaffold_9_12 --blocks ext_scaffold_9_12.synteny_blocks.sorted.tsv --length 100 --colour ext_scaffold_9_prim_dud.fa
+
+cp ext_scaffold_9_12.links.tsv $VSC_DATA
+cp ext_scaffold_9_12.sequence_lengths.tsv $VSC_DATA
+
+cat ext_scaffold_9_12.links.tsv  | mlr --tsv sort -f strand -n block_id > ext_scaffold_9_12.links.sorted.tsv && mv ext_scaffold_9_12.links.sorted.tsv ext_scaffold_9_12.links.tsv
+cat ext_scaffold_9_12.sequence_lengths.tsv | mlr --tsv sort -f seq_id > ext_scaffold_9_12.sequence_lengths.sorted.tsv && mv ext_scaffold_9_12.sequence_lengths.sorted.tsv ext_scaffold_9_12.sequence_lengths.tsv
+Rscript plot_synteny_blocks_gggenomes.R -s ext_scaffold_9_12.sequence_lengths.tsv -l ext_scaffold_9_12.links.tsv --scale 25000000 --p ext_scaffold_9_12
 
 #8 vs 8
 ntSynt ext_scaffold_8_prim_dud.fa ext_scaffold_8_prim_nieu.fa -p ext_scaffold_8 -t 24 -d 0.01
