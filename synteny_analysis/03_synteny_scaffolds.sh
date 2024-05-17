@@ -65,6 +65,8 @@ sed -i '1i >scaffold_17_RagTag' scaffold_H_nieu.fa
 
 
 #synteny analyses
+conda activate ntsynt
+
 #SCAFFOLDS A 
 ntSynt scaffold_A_dud.fa scaffold_A_nieu.fa -p scaffold_A -t 24 -d 0.01
 python denovo_synteny_block_stats.py --tsv scaffold_A.synteny_blocks.tsv --fai scaffold_A_dud.fa.fai scaffold_A_nieu.fa.fai
