@@ -19,7 +19,7 @@ awk 'NR==2 {print substr($0, 74064473, 103390037-74064473+1)}' LG01_dud.fasta > 
 sed -i '1i >scaffold_4_RagTag' scaffold_B_dud.fa
 
 awk 'NR==2 {print substr($0, 120572473, 153501276-120572473+1)}' LG01_nieu.fasta > scaffold_B_nieu.fa #Nieuwpoort 7
-sed -i '1i >scaffold_7_RagTag' ext_scaffold_B_prim_nieu.fa
+sed -i '1i >scaffold_7_RagTag' scaffold_B_nieu.fa
 
 #SCAFFOLDS C
 awk 'NR==2 {print substr($0, 3681807, 34037187-3681807+1)}' LG02_dud.fasta > scaffold_C_dud.fa #Dudzele 3
