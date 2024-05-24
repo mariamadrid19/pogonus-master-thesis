@@ -1,2 +1,6 @@
 # _Pogonus chalceus_ KU Leuven master thesis (MSc Biology)
 Scripts for genome and transcriptome assembly, annotation, synteny analysis, etc... 
+
+_Pogonus chalceus_ (Marsham, 1802) is a carabid beetle frequently found living in saltmarshes along the Atlantic western coast of Europe. They are wing polymorphic, meaning there are with both short- and long-winged ecotypes that occur at habitats with different hydrological regimes. One of these habitats are tidal marshes that are completely flooded regularly for short periods of time and the other are seasonal marshes that are usually dry but can become flooded for several months per year. These divergent habitats are closely related to several behavioral and genetic adaptations of P. chalceus. The tidal marshes are inhabited by individuals with smaller bodies, short wings, and low dispersal abilities, and the seasonal marshes are inhabited by larger individuals with fully developed wings and a greater dispersal ability. 
+
+To fully understand the role of putative inversions hinted at in the genomes of _P. chalceus_, genomic analyses that rely on advanced sequencing technologies and assembly techniques are necessary. Creating a new, high-quality reference genome would provide a foundation for researching SVs across the genomes of these ecotypes. 
