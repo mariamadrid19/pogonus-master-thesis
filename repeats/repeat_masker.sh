@@ -8,5 +8,11 @@
 #SBATCH -A lp_svbelleghem
 
 conda activate EDTA2
-
-RepeatMasker -species "tribolium castaneum" -pa 6 sorted_prim_dud.fasta
+ 
+BuildDatabase -name dudRM sorted_prim_dud.fasta
+RepeatModeler -database dudRM -threads 24 -LTRStruct >& run.out
+RepeatMasker -lib dudRM-families.fa -pa 24 sorted_prim_dud.fasta -dir repeat_trial2 -gff
+ 
+BuildDatabase -name nieRM sorted_prim_nieu.fasta
+RepeatModeler -database nieRM -threads 24 -LTRStruct >& run2.out
+RepeatMasker -lib nieM-families.fa -pa 24 sorted_prim_nieu.fasta -dir repeat_trial_nie -gff
