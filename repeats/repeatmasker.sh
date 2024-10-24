@@ -7,7 +7,7 @@
 #SBATCH -o masker.%j.out
 #SBATCH -A lp_svbelleghem
 
-conda activate EDTA2
+conda activate EDTA
  
 BuildDatabase -name dudRM sorted_prim_dud.fasta
 RepeatModeler -database dudRM -threads 24 -LTRStruct >& run.out
