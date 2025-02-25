@@ -1,5 +1,3 @@
-#Script written by Steven Van Belleghem (2024)
-
 #!/bin/bash -l 
 #SBATCH --cluster=genius 
 #SBATCH --job-name bwa 
@@ -22,3 +20,5 @@ REFNAME=dudPrim
 names=(1 10 2 3 4 5 6 7 8 9)
 
 zcat /lustre1/scratch/350/vsc35085/Maria/Pogonus_reseqALL_$REFNAME.chr_$(echo "${names[ID]}").calls.gz | sed 's/.dudPrim.filtered.sorted.nd.bam//g' | bgzip > /lustre1/scratch/350/vsc35085/Maria/Pogonus_reseqALL_$REFNAME.chr_$(echo "${names[ID]}").H.calls.gz
+
+#Script written by Steven Van Belleghem (2024)
