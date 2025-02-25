@@ -1,5 +1,3 @@
-#Script written by Steven Van Belleghem
-
 #!/bin/bash -l 
 #SBATCH --cluster=genius 
 #SBATCH --job-name bwa 
@@ -46,3 +44,5 @@ python /vsc-hard-mounts/leuven-data/350/vsc35085/programs/genomics_general/popge
 -p $(echo "${pop1[ID]}") \
 -p $(echo "${pop2[ID]}") \
 -eggB FstWC,Dxy -eggW S,Pi,thetaW,D
+
+#Script written by Steven Van Belleghem
