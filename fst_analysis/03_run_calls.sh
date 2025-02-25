@@ -1,5 +1,3 @@
-#Script written by Steven Van Belleghem (2024)
-
 #!/bin/bash -l 
 #SBATCH --cluster=genius 
 #SBATCH --job-name calls 
@@ -7,6 +5,9 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=20:00:00 
 #SBATCH -A lp_svbelleghem
+
+#Script written by Steven Van Belleghem (2024)
+
 
 ID=$((SLURM_ARRAY_TASK_ID -1))
 
