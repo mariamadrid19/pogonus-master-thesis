@@ -28,12 +28,9 @@ ntSynt 10_sorted_prim_dud.fasta 10_sorted_prim_nieu.fasta -p primary_10 -t 24 -d
 
 python denovo_synteny_block_stats.py --tsv primary_10.synteny_blocks.tsv --fai 10_sorted_prim_dud.fasta.fai 10_sorted_prim_nieu.fasta.fai
 
-python sort_ntsynt_blocks.py --synteny_blocks primary_10.synteny_blocks.tsv --sort_order 10_sorted_prim_dud.fasta.fai 10_sorted_prim_nieu.fasta.fai --fais > primary_10.synteny_bloc
-ks.sorted.tsv
+python sort_ntsynt_blocks.py --synteny_blocks primary_10.synteny_blocks.tsv --sort_order 10_sorted_prim_dud.fasta.fai 10_sorted_prim_nieu.fasta.fai --fais > primary_10.synteny_blocks.sorted.tsv
 
-python format_blocks_gggenomes.py --fai 10_sorted_prim_dud.fasta.fai 10_sorted_prim_nieu.fasta.fai --prefix primary_10 --blocks primary_10.synteny_blocks.sorted.tsv --length 100 --
-colour 10_sorted_prim_dud.fasta
+python format_blocks_gggenomes.py --fai 10_sorted_prim_dud.fasta.fai 10_sorted_prim_nieu.fasta.fai --prefix primary_10 --blocks primary_10.synteny_blocks.sorted.tsv --length 100 --colour 10_sorted_prim_dud.fasta
 
 cp primary_10.links.tsv $VSC_DATA
 cp primary_10.sequence_lengths.tsv $VSC_DATA
-
