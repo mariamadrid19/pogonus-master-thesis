@@ -8,8 +8,7 @@
 #SBATCH -A lp_svbelleghem
 
 conda activate repeats
-
-# repeats contains the following packages: repeatmodeler repeatmasker rmblast trf genometools-genometools ltr_retriever ninja-nj (from forge and bioconda)
+# the repeats env contains the following packages: repeatmodeler repeatmasker rmblast trf genometools-genometools ltr_retriever ninja-nj
  
 BuildDatabase -name dudRM sorted_prim_dud.fasta
 RepeatModeler -database dudRM -threads 24 -LTRStruct >& run.out
